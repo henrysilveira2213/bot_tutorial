@@ -29,5 +29,14 @@ client.on("message", message => {
   }
  
 });
- 
+client.on("guildMemberAdd",(membro)=>{
+  if(membro.guild.id == "524699382508027904"){
+    membro.guild.channels.get("597823484487270440").send("O(a) <@" + membro.user.id + "> acabou de entrar na guilda")
+  }
+})
+client.on("guildMemberRemove",(membro)=>{
+  if(membro.guild.id == "524699382508027904"){
+    membro.guild.channels.get("597823484487270440").send("O(a) <@" + membro.user.id + "> acabou de sair da guilda")
+  }
+})
 client.login(config.token)
